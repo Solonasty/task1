@@ -8,10 +8,8 @@ let titleBlock = document.querySelector('.col--1');
 button1.addEventListener('click', () => {
   if (titleBlock.style.display === 'block') {
     titleBlock.style.display = 'none';
-    console.log('1')
   } else {
     titleBlock.style.display = 'block';
-    console.log('2')
   }
 });
 
@@ -22,17 +20,17 @@ let col2 = document.querySelector('.col--2');
 let col3 = document.querySelector('.col--3');
 
 button2.addEventListener('click', () => {
-  if (col2.nextElementSibling !== col3) {
-    col2.after(col3);
-  } else {
+  if (col2.nextElementSibling == col3) {
     col2.before(col3);
+  } else {
+    col3.before(col2);
   }
 });
 
 // 2.3 Modal
 
 let modal = document.getElementById("modal");
-let closeBtn = document.getElementsByClassName("close")[0];
+let closeBtn = document.querySelector('.close');
 
 window.onload = function() {
   modal.style.display = "block";
